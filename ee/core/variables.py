@@ -145,10 +145,10 @@ class EEVariables():
                     "php5-mcrypt", "php5-common", "php5-readline",
                     "php5-mysqlnd", "php5-cli", "php5-memcache", "php5-imagick",
                     "memcached", "graphviz", "php-pear"]
-        else:
-            ee_php = ["php5-fpm", "php5-curl", "php5-gd", "php5-imap",
-                    "php5-mcrypt", "php5-common", "php5-readline",
-                    "php5-mysqlnd", "php5-cli", "php5-memcache", "php5-imagick",
+        elif ee_platform_codename == 'stretch':                
+            ee_php = ["php5.6-fpm", "php5.6-curl", "php5.6-gd", "php5.6-imap",
+                    "php5.6-mcrypt", "php5.6-common", "php5.6-readline",
+                    "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
                     "memcached", "graphviz", "php-pear"]
 
 
