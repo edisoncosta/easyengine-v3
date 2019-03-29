@@ -142,12 +142,12 @@ class EEVariables():
 
         if ee_platform_codename == 'jessie':
             ee_php = ["php5-fpm", "php5-curl", "php5-gd", "php5-imap",
-                    "php5-mcrypt", "php5-common", "php5-readline", "php5-intl"
+                    "php5-mcrypt", "php5-common", "php5-readline", "php5-intl",
                     "php5-mysqlnd", "php5-cli", "php5-memcache", "php5-imagick",
                     "memcached", "graphviz", "php-pear"]
         elif ee_platform_codename == 'stretch':                
             ee_php = ["php5.6-fpm", "php5.6-curl", "php5.6-gd", "php5.6-imap",
-                    "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl"
+                    "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl",
                     "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
                     "memcached", "graphviz", "php-pear"]
 
@@ -155,7 +155,7 @@ class EEVariables():
                     "php7.0-mcrypt", "php7.0-common", "php7.0-readline", "php7.0-redis",
                     "php7.0-mysql", "php7.0-cli", "php7.0-memcache", "php7.0-imagick",
                     "php7.0-mbstring", "php7.0-recode", "php7.0-bcmath", "php7.0-opcache", "php7.0-zip", "php7.0-xml",
-                    "php7.0-soap", "php7.0-msgpack", "php7.0-intl"
+                    "php7.0-soap", "php7.0-msgpack", "php7.0-intl",
                     "memcached", "graphviz", "php-pear", "php7.0-xdebug"]
         ee_php_extra = []
 
