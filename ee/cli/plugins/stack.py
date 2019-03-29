@@ -976,7 +976,7 @@ class EEStackController(CementBaseController):
                 EEService.restart_service(self, 'php5-fpm')
 
 
-            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic') and set(EEVariables.ee_php5_6).issubset(set(apt_packages)):
+            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch') and set(EEVariables.ee_php5_6).issubset(set(apt_packages)):
                 # Create log directories
                 if not os.path.exists('/var/log/php/5.6/'):
                     Log.debug(self, 'Creating directory /var/log/php/5.6/')
@@ -1098,7 +1098,7 @@ class EEStackController(CementBaseController):
                 EEService.restart_service(self, 'php5.6-fpm')
 
         #PHP7.0 configuration for debian
-            if (EEVariables.ee_platform_codename == 'jessie' ) and set(EEVariables.ee_php7_0).issubset(set(apt_packages)):
+            if (EEVariables.ee_platform_codename == 'jessie' or EEVariables.ee_platform_codename == 'stretch') and set(EEVariables.ee_php7_0).issubset(set(apt_packages)):
                  # Create log directories
                 if not os.path.exists('/var/log/php/7.0/'):
                     Log.debug(self, 'Creating directory /var/log/php/7.0/')
