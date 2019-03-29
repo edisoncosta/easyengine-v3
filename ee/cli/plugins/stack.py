@@ -2227,7 +2227,7 @@ class EEStackController(CementBaseController):
 
         #PHP 7.0 for Debian (jessie+)
             if self.app.pargs.php7 and EEVariables.ee_platform_distro == 'debian':
-                if (EEVariables.ee_platform_codename == 'jessie'):
+                if (EEVariables.ee_platform_codename == 'jessie' or EEVariables.ee_platform_codename == 'stretch'):
                     Log.debug(self, "Setting apt_packages variable for PHP 7.0")
                     if not EEAptGet.is_installed(self, 'php7.0-fpm') :
                         apt_packages = apt_packages + EEVariables.ee_php7_0
