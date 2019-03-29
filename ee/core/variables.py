@@ -228,8 +228,10 @@ class EEVariables():
 
     if (ee_platform_codename == 'trusty' or ee_platform_codename == 'xenial' or ee_platform_codename == 'bionic'):
         ee_redis = ['redis-server', 'php-redis']
-    else:
+    elif ee_platform_codename == 'jessie':
         ee_redis = ['redis-server', 'php5-redis']
+    elif ee_platform_codename == 'stretch':       
+        ee_redis = ['redis-server', 'php-redis']
 
     # Repo path
     ee_repo_file = "ee-repo.list"
