@@ -109,8 +109,7 @@ class EEVariables():
         ee_nginx_repo = ("deb http://download.opensuse.org/repositories/home:"
                          "/virtubox:/WordOps/Debian_9.0/ /")
         ee_nginx = ["nginx-custom", "nginx-wo"]
-        ee_nginx_key = '188C9FB063F0                                 
-
+        ee_nginx_key = '188C9FB063F0247A'                          
 
     # PHP repo and packages
     if ee_platform_distro == 'ubuntu':
