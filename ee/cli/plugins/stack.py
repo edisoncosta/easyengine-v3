@@ -2242,7 +2242,7 @@ class EEStackController(CementBaseController):
 
     #PHP 7.0 for Ubuntu
             if self.app.pargs.php7 and not EEVariables.ee_platform_distro == 'debian':
-                if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic'):
+                if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch'):
                     Log.debug(self, "Setting apt_packages variable for PHP 7.0")
                     if not EEAptGet.is_installed(self, 'php7.0-fpm') :
                         apt_packages = apt_packages + EEVariables.ee_php7_0 + EEVariables.ee_php_extra
