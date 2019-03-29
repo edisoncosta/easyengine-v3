@@ -838,7 +838,7 @@ class EEStackController(CementBaseController):
                                          "'$http_host \"$request\" $status $body_bytes_sent '\n"
                                          "'\"$http_referer\" \"$http_user_agent\"';\n")
 
-            if (EEVariables.ee_platform_distro == 'debian' or EEVariables.ee_platform_codename == 'precise') and set(EEVariables.ee_php).issubset(set(apt_packages)):
+            if (EEVariables.ee_platform_distro == 'debian' and EEVariables.ee_platform_codename == 'jessie') and set(EEVariables.ee_php).issubset(set(apt_packages)):
                 # Create log directories
                 if not os.path.exists('/var/log/php5/'):
                     Log.debug(self, 'Creating directory /var/log/php5/')
