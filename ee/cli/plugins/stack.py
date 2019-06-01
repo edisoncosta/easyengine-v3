@@ -115,7 +115,7 @@ class EEStackController(CementBaseController):
 
         if set(EEVariables.ee_mysql).issubset(set(apt_packages)):
             Log.info(self, "Adding repository for MySQL, please wait...")
-            mysql_pref = ("Package: *\nPin: origin sfo1.mirrors.digitalocean.com"
+            mysql_pref = ("Package: *\nPin: origin nyc2.mirrors.digitalocean.com"
                           "\nPin-Priority: 1000\n")
             with open('/etc/apt/preferences.d/'
                       'MariaDB.pref', 'w') as mysql_pref_file:
@@ -1645,7 +1645,7 @@ class EEStackController(CementBaseController):
                               .format(EEVariables.ee_webroot))
                     os.makedirs('{0}22222/htdocs/db'
                                 .format(EEVariables.ee_webroot))
-                shutil.move('/tmp/phpmyadmin-STABLE/',
+                shutil.move('/tmp/phpMyAdmin-4.8.5-all-languages/',
                             '{0}22222/htdocs/db/pma/'
                             .format(EEVariables.ee_webroot))
                 shutil.copyfile('{0}22222/htdocs/db/pma/config.sample.inc.php'
@@ -2080,7 +2080,7 @@ class EEStackController(CementBaseController):
             if any('/tmp/pra.tar.gz' == x[1]
                     for x in packages):
                 Log.debug(self, 'Extracting file /tmp/pra.tar.gz to '
-                          'loaction /tmp/')
+                          'location /tmp/')
                 EEExtract.extract(self, '/tmp/pra.tar.gz', '/tmp/')
                 if not os.path.exists('{0}22222/htdocs/cache/redis'
                                       .format(EEVariables.ee_webroot)):
@@ -2301,8 +2301,7 @@ class EEStackController(CementBaseController):
                     Log.info(self, "WP-CLI is already installed")
             if self.app.pargs.phpmyadmin:
                 Log.debug(self, "Setting packages varible for phpMyAdmin ")
-                packages = packages + [["https://github.com/phpmyadmin/"
-                                        "phpmyadmin/archive/STABLE.tar.gz",
+                packages = packages + [["https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-all-languages.tar.gz",
                                         "/tmp/pma.tar.gz", "phpMyAdmin"]]
 
             if self.app.pargs.phpredisadmin:
