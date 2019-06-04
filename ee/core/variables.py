@@ -11,13 +11,13 @@ import datetime
 class EEVariables():
     """Intialization of core variables"""
 
-     # EasyEngine version
+    # EasyEngine version
     ee_version = "3.8.1"
     # EasyEngine packages versions
-    ee_wp_cli = "1.5.1"
-    ee_adminer = "4.6.2"
-    ee_roundcube = "1.3.6"
-   # ee_vimbadmin = "3.0.12"
+    ee_wp_cli = "2.2.0"
+    ee_adminer = "4.7.1"
+    ee_roundcube = "1.3.9"
+    # ee_vimbadmin = "3.0.12"
     ee_vimbadmin = "master"
 
     # Get WPCLI path
