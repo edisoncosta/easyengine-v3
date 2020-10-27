@@ -1645,7 +1645,7 @@ class EEStackController(CementBaseController):
                               .format(EEVariables.ee_webroot))
                     os.makedirs('{0}22222/htdocs/db'
                                 .format(EEVariables.ee_webroot))
-                shutil.move('/tmp/phpMyAdmin-4.8.5-all-languages/',
+                shutil.move('/tmp/phpMyAdmin-4.9.7-all-languages/',
                             '{0}22222/htdocs/db/pma/'
                             .format(EEVariables.ee_webroot))
                 shutil.copyfile('{0}22222/htdocs/db/pma/config.sample.inc.php'
