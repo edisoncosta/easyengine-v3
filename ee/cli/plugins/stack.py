@@ -1645,7 +1645,7 @@ class EEStackController(CementBaseController):
                               .format(EEVariables.ee_webroot))
                     os.makedirs('{0}22222/htdocs/db'
                                 .format(EEVariables.ee_webroot))
-                shutil.move('/tmp/phpMyAdmin-4.8.5-all-languages/',
+                shutil.move('/tmp/phpMyAdmin-4.9.7-all-languages/',
                             '{0}22222/htdocs/db/pma/'
                             .format(EEVariables.ee_webroot))
                 shutil.copyfile('{0}22222/htdocs/db/pma/config.sample.inc.php'
@@ -2301,7 +2301,7 @@ class EEStackController(CementBaseController):
                     Log.info(self, "WP-CLI is already installed")
             if self.app.pargs.phpmyadmin:
                 Log.debug(self, "Setting packages varible for phpMyAdmin ")
-                packages = packages + [["https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-all-languages.tar.gz",
+                packages = packages + [["https://files.phpmyadmin.net/phpMyAdmin/4.9.7/phpMyAdmin-4.9.7-all-languages.tar.gz",
                                         "/tmp/pma.tar.gz", "phpMyAdmin"]]
 
             if self.app.pargs.phpredisadmin:

@@ -90,7 +90,14 @@ function ee_install_dep()
     if [ "$ee_linux_distro" == "Ubuntu" ]; then
         apt-get -y install build-essential curl gzip python3 python3-apt python3-setuptools python3-dev sqlite3 git tar software-properties-common || ee_lib_error "Unable to install pre depedencies, exit status " 1
     elif [ "$ee_linux_distro" == "Debian" ]; then
-        apt-get -y install build-essential curl gzip dirmngr python3 python3-apt python3-setuptools python3-dev sqlite3 git tar python-software-properties || ee_lib_error "Unable to pre depedencies, exit status " 1
+        apt-get -y install build-essential curl gzip dirmngr python3 python3-apt python3-setuptools python3-dev sqlite3 git tar python3-software-properties || ee_lib_error "Unable to pre depedencies, exit status " 1
+        pip3 install sh==1.14.1 || ee_lib_error "Unable to pre depedencies, exit status " 1
+        pip3 install pystache==0.5.4 || ee_lib_error "Unable to pre depedencies, exit status " 1
+        pip3 install pynginxconfig==0.3.4 || ee_lib_error "Unable to pre depedencies, exit status " 1
+        pip3 install psutil==5.6.6 || ee_lib_error "Unable to pre depedencies, exit status " 1
+        pip3 install cement==2.4.0 || ee_lib_error "Unable to pre depedencies, exit status " 1
+        pip3 install SQLAlchemy==1.3.20 || ee_lib_error "Unable to pre depedencies, exit status " 1
+        pip3 install PyMySQL==0.8.0 || ee_lib_error "Unable to pre depedencies, exit status " 1
     fi
 
     # Generating Locale

@@ -40,7 +40,7 @@ class EEStackMigrateController(CementBaseController):
         EERepo.add(self, repo_url=EEVariables.ee_mysql_repo)
         Log.debug(self, 'Adding key for {0}'
                   .format(EEVariables.ee_mysql_repo))
-        EERepo.add_key(self, '0xcbcb082a1bb943db',
+        EERepo.add_key(self, '0xF1656F24C74CD1D8',
                        keyserver="keyserver.ubuntu.com")
 
         config = configparser.ConfigParser()
