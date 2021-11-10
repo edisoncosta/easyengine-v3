@@ -175,7 +175,7 @@ class EEVariables():
                          "10.3/ubuntu {codename} main"
                          .format(codename=ee_platform_codename))
     elif ee_platform_distro == 'debian':
-        ee_mysql_repo = ("deb [arch=amd64,i386,ppc64el] http://nyc2.mirrors.digitalocean.com/mariadb/repo/"
+        ee_mysql_repo = ("deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/"
         #ee_mysql_repo = ("deb [arch=amd64,i386,ppc64el] http://mariadb.mirrors.ovh.net/MariaDB/repo/"
                          "10.4/debian {codename} main"
                          .format(codename=ee_platform_codename))
