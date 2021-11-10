@@ -176,8 +176,9 @@ class EEStackController(CementBaseController):
         if set(EEVariables.ee_nginx).issubset(set(apt_packages)):
             Log.info(self, "Adding repository for NGINX, please wait...")
             EERepo.add(self, repo_url=EEVariables.ee_nginx_repo)
-            Log.debug(self, 'Adding ppa of Nginx')
-            EERepo.add_key(self, EEVariables.ee_nginx_key)
+            Log.debug(self, 'Adding key GPG of Nginx')
+            EEShellExec.cmd_exec(self, "apt-key adv --keyserver keyserver.ubuntu.com --recv 188C9FB063F0247A")
+            # EERepo.add_key(self, EEVariables.ee_nginx_key)
 
         if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic'):
             if set(EEVariables.ee_php7_0).issubset(set(apt_packages)) \
