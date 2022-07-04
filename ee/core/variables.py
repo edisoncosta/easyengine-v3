@@ -197,9 +197,7 @@ class EEVariables():
                          "10.3/ubuntu {codename} main"
                          .format(codename=ee_platform_codename))
     elif ee_platform_distro == 'debian':
-        ee_mysql_repo = ("deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/"
-        #ee_mysql_repo = ("deb [arch=amd64,i386,ppc64el] http://mariadb.mirrors.ovh.net/MariaDB/repo/"
-                         "10.4/debian {codename} main"
+        ee_mysql_repo = ("deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.4/debian {codename} main"                        
                          .format(codename=ee_platform_codename))
 
     ee_mysql = ["mariadb-server", "percona-toolkit"]
@@ -245,12 +243,12 @@ class EEVariables():
     ee_hhvm = ["hhvm"]
 
     # Redis repo details
-    if ee_platform_distro == 'ubuntu':
-        ee_redis_repo = ("ppa:chris-lea/redis-server")
+    #if ee_platform_distro == 'ubuntu':
+    #    ee_redis_repo = ("ppa:chris-lea/redis-server")
 
-    else:
-        ee_redis_repo = ("deb http://packages.dotdeb.org {codename} all"
-                        .format(codename=ee_platform_codename))
+    #else:
+    #    ee_redis_repo = ("deb http://packages.dotdeb.org {codename} all"
+    #                    .format(codename=ee_platform_codename))
 
     if (ee_platform_codename == 'trusty' or ee_platform_codename == 'xenial' or ee_platform_codename == 'bionic'):
         ee_redis = ['redis-server', 'php-redis']
@@ -258,9 +256,11 @@ class EEVariables():
         ee_redis = ['redis-server', 'php5-redis']
     elif ee_platform_codename == 'stretch':       
         ee_redis = ['redis-server', 'php-redis']
+        ee_redis_repo = ("deb http://packages.dotdeb.org {codename} all"
+                        .format(codename=ee_platform_codename))
     elif ee_platform_codename == 'buster':       
         ee_redis = ['redis-server', 'php-redis']        
-
+        ee_redis_repo = ("")
     # Repo path
     ee_repo_file = "ee-repo.list"
     ee_repo_file_path = ("/etc/apt/sources.list.d/" + ee_repo_file)
