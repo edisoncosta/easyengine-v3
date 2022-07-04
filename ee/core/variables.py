@@ -109,7 +109,12 @@ class EEVariables():
         ee_nginx_repo = ("deb http://download.opensuse.org/repositories/home:"
                          "/virtubox:/WordOps/Debian_9.0/ /")
         ee_nginx = ["nginx-custom", "nginx-wo"]
-        ee_nginx_key = '188C9FB063F0247A'                          
+        ee_nginx_key = '188C9FB063F0247A'              
+    elif ee_platform_codename == 'buster':
+        ee_nginx_repo = ("deb http://download.opensuse.org/repositories/home:"
+                         "/virtubox:/WordOps/Debian_10/ /")
+        ee_nginx = ["nginx-custom", "nginx-wo"]
+        ee_nginx_key = '188C9FB063F0247A'                         
 
     # PHP repo and packages
     if ee_platform_distro == 'ubuntu':
@@ -139,6 +144,8 @@ class EEVariables():
             ee_php_repo = ("deb http://packages.dotdeb.org {codename} all".format(codename=ee_platform_codename))
         elif ee_platform_codename == 'stretch':                
             ee_php_repo = ("deb https://packages.sury.org/php/ {codename} main".format(codename=ee_platform_codename))
+        elif ee_platform_codename == 'buster':                
+            ee_php_repo = ("deb https://packages.sury.org/php/ {codename} main".format(codename=ee_platform_codename))
 
         if ee_platform_codename == 'jessie':
             ee_php = ["php5-fpm", "php5-curl", "php5-gd", "php5-imap",
@@ -162,6 +169,23 @@ class EEVariables():
                     "php7.0-soap", "php7.0-msgpack", "php7.0-intl",
                     "memcached", "graphviz", "php-pear", "php7.0-xdebug"]
         ee_php_extra = []
+        elif ee_platform_codename == 'buster':                
+            ee_php5_6 = ["php5.6-fpm", "php5.6-curl", "php5.6-gd", "php5.6-imap", "php5.6-xml",
+                    "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl",
+                    "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
+                    "memcached", "graphviz", "php-pear"]
+            ee_php = ["php5.6-fpm", "php5.6-curl", "php5.6-gd", "php5.6-imap", "php5.6-xml",
+                    "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl",
+                    "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
+                    "memcached", "graphviz", "php-pear"]
+
+        ee_php7_0 = ["php7.0-fpm", "php7.0-curl", "php7.0-gd", "php7.0-imap",
+                    "php7.0-mcrypt", "php7.0-common", "php7.0-readline", "php7.0-redis",
+                    "php7.0-mysql", "php7.0-cli", "php7.0-memcache", "php7.0-imagick",
+                    "php7.0-mbstring", "php7.0-recode", "php7.0-bcmath", "php7.0-opcache", "php7.0-zip", "php7.0-xml",
+                    "php7.0-soap", "php7.0-msgpack", "php7.0-intl",
+                    "memcached", "graphviz", "php-pear", "php7.0-xdebug"]
+        ee_php_extra = []        
 
     if ee_platform_codename == 'wheezy':
         ee_php = ee_php + ["php5-dev"]
@@ -236,6 +260,8 @@ class EEVariables():
         ee_redis = ['redis-server', 'php5-redis']
     elif ee_platform_codename == 'stretch':       
         ee_redis = ['redis-server', 'php-redis']
+    elif ee_platform_codename == 'buster':       
+        ee_redis = ['redis-server', 'php-redis']        
 
     # Repo path
     ee_repo_file = "ee-repo.list"
