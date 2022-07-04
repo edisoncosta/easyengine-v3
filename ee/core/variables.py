@@ -168,7 +168,9 @@ class EEVariables():
                     "php7.0-mbstring", "php7.0-recode", "php7.0-bcmath", "php7.0-opcache", "php7.0-zip", "php7.0-xml",
                     "php7.0-soap", "php7.0-msgpack", "php7.0-intl",
                     "memcached", "graphviz", "php-pear", "php7.0-xdebug"]
-        elif ee_platform_codename == 'buster':                
+        ee_php_extra = []
+        
+        elif ee_platform_codename == 'buster':
             ee_php5_6 = ["php5.6-fpm", "php5.6-curl", "php5.6-gd", "php5.6-imap", "php5.6-xml",
                     "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl",
                     "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
