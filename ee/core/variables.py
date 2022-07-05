@@ -150,7 +150,7 @@ class EEVariables():
         if ee_platform_codename == 'jessie':
             ee_php = ["php5-fpm", "php5-curl", "php5-gd", "php5-imap",
                     "php5-mcrypt", "php5-common", "php5-readline", "php5-intl",
-                    "php5-mysqlnd", "php5-cli", "php5-memcache", "php5-imagick",
+                    "php5-mysqlnd", "php5-cli", "php5-memcache", "php5-imagick",        
                     "memcached", "graphviz", "php-pear"]
         elif ee_platform_codename == 'stretch':                
             ee_php5_6 = ["php5.6-fpm", "php5.6-curl", "php5.6-gd", "php5.6-imap", "php5.6-xml",
@@ -161,15 +161,14 @@ class EEVariables():
                     "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl",
                     "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
                     "memcached", "graphviz", "php-pear"]
-
-        ee_php7_0 = ["php7.0-fpm", "php7.0-curl", "php7.0-gd", "php7.0-imap",
+            ee_php7_0 = ["php7.0-fpm", "php7.0-curl", "php7.0-gd", "php7.0-imap",
                     "php7.0-mcrypt", "php7.0-common", "php7.0-readline", "php7.0-redis",
                     "php7.0-mysql", "php7.0-cli", "php7.0-memcache", "php7.0-imagick",
                     "php7.0-mbstring", "php7.0-recode", "php7.0-bcmath", "php7.0-opcache", "php7.0-zip", "php7.0-xml",
                     "php7.0-soap", "php7.0-msgpack", "php7.0-intl",
                     "memcached", "graphviz", "php-pear", "php7.0-xdebug"]
-        ee_php_extra = []
-        elif ee_platform_codename == 'buster':                
+            ee_php_extra = []
+        elif ee_platform_codename == 'buster':
             ee_php5_6 = ["php5.6-fpm", "php5.6-curl", "php5.6-gd", "php5.6-imap", "php5.6-xml",
                     "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl",
                     "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
@@ -178,14 +177,13 @@ class EEVariables():
                     "php5.6-mcrypt", "php5.6-common", "php5.6-readline", "php5.6-intl",
                     "php5.6-mysqlnd", "php5.6-cli", "php5.6-memcache", "php5.6-imagick",
                     "memcached", "graphviz", "php-pear"]
-
-        ee_php7_0 = ["php7.0-fpm", "php7.0-curl", "php7.0-gd", "php7.0-imap",
+            ee_php7_0 = ["php7.0-fpm", "php7.0-curl", "php7.0-gd", "php7.0-imap",
                     "php7.0-mcrypt", "php7.0-common", "php7.0-readline", "php7.0-redis",
                     "php7.0-mysql", "php7.0-cli", "php7.0-memcache", "php7.0-imagick",
                     "php7.0-mbstring", "php7.0-recode", "php7.0-bcmath", "php7.0-opcache", "php7.0-zip", "php7.0-xml",
                     "php7.0-soap", "php7.0-msgpack", "php7.0-intl",
                     "memcached", "graphviz", "php-pear", "php7.0-xdebug"]
-        ee_php_extra = []        
+            ee_php_extra = []        
 
     if ee_platform_codename == 'wheezy':
         ee_php = ee_php + ["php5-dev"]
@@ -199,9 +197,7 @@ class EEVariables():
                          "10.3/ubuntu {codename} main"
                          .format(codename=ee_platform_codename))
     elif ee_platform_distro == 'debian':
-        ee_mysql_repo = ("deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/"
-        #ee_mysql_repo = ("deb [arch=amd64,i386,ppc64el] http://mariadb.mirrors.ovh.net/MariaDB/repo/"
-                         "10.4/debian {codename} main"
+        ee_mysql_repo = ("deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.4/debian {codename} main"                        
                          .format(codename=ee_platform_codename))
 
     ee_mysql = ["mariadb-server", "percona-toolkit"]
@@ -247,12 +243,12 @@ class EEVariables():
     ee_hhvm = ["hhvm"]
 
     # Redis repo details
-    if ee_platform_distro == 'ubuntu':
-        ee_redis_repo = ("ppa:chris-lea/redis-server")
+    #if ee_platform_distro == 'ubuntu':
+    #    ee_redis_repo = ("ppa:chris-lea/redis-server")
 
-    else:
-        ee_redis_repo = ("deb http://packages.dotdeb.org {codename} all"
-                        .format(codename=ee_platform_codename))
+    #else:
+    #    ee_redis_repo = ("deb http://packages.dotdeb.org {codename} all"
+    #                    .format(codename=ee_platform_codename))
 
     if (ee_platform_codename == 'trusty' or ee_platform_codename == 'xenial' or ee_platform_codename == 'bionic'):
         ee_redis = ['redis-server', 'php-redis']
@@ -260,9 +256,11 @@ class EEVariables():
         ee_redis = ['redis-server', 'php5-redis']
     elif ee_platform_codename == 'stretch':       
         ee_redis = ['redis-server', 'php-redis']
+        ee_redis_repo = ("deb http://packages.dotdeb.org {codename} all"
+                        .format(codename=ee_platform_codename))
     elif ee_platform_codename == 'buster':       
         ee_redis = ['redis-server', 'php-redis']        
-
+        ee_redis_repo = ("")
     # Repo path
     ee_repo_file = "ee-repo.list"
     ee_repo_file_path = ("/etc/apt/sources.list.d/" + ee_repo_file)
