@@ -1394,13 +1394,13 @@ class EESiteUpdateController(CementBaseController):
                 Log.debug(self, str(e))
                 Log.error(self, "NGINX configuration check failed.")
 
-            try:
-                sitebackup(self, data)
-            except Exception as e:
-                Log.debug(self, str(e))
-                Log.info(self, Log.FAIL + "Check logs for reason "
-                     "`tail /var/log/ee/ee.log` & Try Again!!!")
-                return 1
+            #try:
+            #    sitebackup(self, data)
+            #except Exception as e:
+            #    Log.debug(self, str(e))
+            #    Log.info(self, Log.FAIL + "Check logs for reason "
+            #         "`tail /var/log/ee/ee.log` & Try Again!!!")
+            #    return 1
 
             # setup NGINX configuration, and webroot
             try:
