@@ -115,7 +115,7 @@ class EEStackController(CementBaseController):
 
         if set(EEVariables.ee_mysql).issubset(set(apt_packages)):
             Log.info(self, "Adding repository for MySQL, please wait...")
-            mysql_pref = ("Package: *\nPin: origin nyc2.mirrors.digitalocean.com"
+            mysql_pref = ("Package: *\nPin: origin mariadb.mirrors.ovh.net"
                           "\nPin-Priority: 1000\n")
             with open('/etc/apt/preferences.d/'
                       'MariaDB.pref', 'w') as mysql_pref_file:
@@ -134,7 +134,7 @@ class EEStackController(CementBaseController):
                       "password \" | "
                       "debconf-set-selections")
             try:
-                EEShellExec.cmd_exec(self, "echo \"mariadb-server-10.1 "
+                EEShellExec.cmd_exec(self, "echo \"mariadb-server-10.6 "
                                      "mysql-server/root_password "
                                      "password {chars}\" | "
                                      "debconf-set-selections"
@@ -143,12 +143,12 @@ class EEStackController(CementBaseController):
             except CommandExecutionError as e:
                 Log.error("Failed to initialize MySQL package")
 
-            Log.debug(self, "echo \"mariadb-server-10.1 "
+            Log.debug(self, "echo \"mariadb-server-10.6 "
                       "mysql-server/root_password_again "
                       "password \" | "
                       "debconf-set-selections")
             try:
-                EEShellExec.cmd_exec(self, "echo \"mariadb-server-10.1 "
+                EEShellExec.cmd_exec(self, "echo \"mariadb-server-10.6 "
                                      "mysql-server/root_password_again "
                                      "password {chars}\" | "
                                      "debconf-set-selections"
