@@ -145,7 +145,7 @@ class EEVariables():
         elif ee_platform_codename == 'stretch':                
             ee_php_repo = ("deb https://packages.sury.org/php/ {codename} main".format(codename=ee_platform_codename))
         elif ee_platform_codename == 'buster':                
-            ee_php_repo = ("deb https://mirror.keepcloud.services/php buster main".format(codename=ee_platform_codename))
+            ee_php_repo = ("deb https://mirror.keepcloud.services/php {codename} main".format(codename=ee_platform_codename))
 
         if ee_platform_codename == 'jessie':
             ee_php = ["php5-fpm", "php5-curl", "php5-gd", "php5-imap",
