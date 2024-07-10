@@ -977,7 +977,7 @@ class EEStackController(CementBaseController):
                 EEService.restart_service(self, 'php5-fpm')
 
 
-            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster') and set(EEVariables.ee_php5_6).issubset(set(apt_packages)):
+            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster' or EEVariables.ee_platform_codename == 'bullseye') and set(EEVariables.ee_php5_6).issubset(set(apt_packages)):
                 # Create log directories
                 if not os.path.exists('/var/log/php/5.6/'):
                     Log.debug(self, 'Creating directory /var/log/php/5.6/')
@@ -1099,7 +1099,7 @@ class EEStackController(CementBaseController):
                 EEService.restart_service(self, 'php5.6-fpm')
 
         #PHP7.0 configuration for debian
-            if (EEVariables.ee_platform_codename == 'jessie' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster') and set(EEVariables.ee_php7_0).issubset(set(apt_packages)):
+            if (EEVariables.ee_platform_codename == 'jessie' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster' or EEVariables.ee_platform_codename == 'bullseye') and set(EEVariables.ee_php7_0).issubset(set(apt_packages)):
                  # Create log directories
                 if not os.path.exists('/var/log/php/7.0/'):
                     Log.debug(self, 'Creating directory /var/log/php/7.0/')
@@ -2228,7 +2228,7 @@ class EEStackController(CementBaseController):
 
         #PHP 7.0 for Debian (jessie+)
             if self.app.pargs.php7 and EEVariables.ee_platform_distro == 'debian':
-                if (EEVariables.ee_platform_codename == 'jessie' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster'):
+                if (EEVariables.ee_platform_codename == 'jessie' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster' or EEVariables.ee_platform_codename == 'bullseye'):
                     Log.debug(self, "Setting apt_packages variable for PHP 7.0")
                     if not EEAptGet.is_installed(self, 'php7.0-fpm') :
                         apt_packages = apt_packages + EEVariables.ee_php7_0
@@ -2243,7 +2243,7 @@ class EEStackController(CementBaseController):
 
     #PHP 7.0 for Ubuntu
             if self.app.pargs.php7 and not EEVariables.ee_platform_distro == 'debian':
-                if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster'):
+                if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster' or EEVariables.ee_platform_codename == 'bullseye'):
                     Log.debug(self, "Setting apt_packages variable for PHP 7.0")
                     if not EEAptGet.is_installed(self, 'php7.0-fpm') :
                         apt_packages = apt_packages + EEVariables.ee_php7_0 + EEVariables.ee_php_extra
@@ -2518,7 +2518,7 @@ class EEStackController(CementBaseController):
                 Log.info(self,"PHP 7.0 not supported.")
 
         if self.app.pargs.php7:
-            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster'):
+            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster' or EEVariables.ee_platform_codename == 'bullseye'):
                 Log.debug(self, "Removing apt_packages variable of PHP 7.0")
                 apt_packages = apt_packages + EEVariables.ee_php7_0
                 if not EEAptGet.is_installed(self, 'php5.6-fpm'):
@@ -2695,7 +2695,7 @@ class EEStackController(CementBaseController):
                 Log.info(self,"PHP 7.0 not supported.")
 
         if self.app.pargs.php7:
-            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster'):
+            if (EEVariables.ee_platform_codename == 'trusty' or EEVariables.ee_platform_codename == 'xenial' or EEVariables.ee_platform_codename == 'bionic' or EEVariables.ee_platform_codename == 'stretch' or EEVariables.ee_platform_codename == 'buster' or EEVariables.ee_platform_codename == 'bullseye'):
                 Log.debug(self, "Removing apt_packages variable of PHP 7.0")
                 apt_packages = apt_packages + EEVariables.ee_php7_0
                 if not EEAptGet.is_installed(self, 'php5.6-fpm'):
