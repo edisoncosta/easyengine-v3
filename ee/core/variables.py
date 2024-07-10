@@ -1,5 +1,6 @@
 """EasyEngine core variable module"""
-import platform
+#import platform
+import distro
 import socket
 import configparser
 import os
@@ -29,8 +30,10 @@ class EEVariables():
     ee_date = datetime.datetime.now().strftime('%d%b%Y%H%M%S')
 
     # EasyEngine core variables
-    ee_platform_distro = platform.linux_distribution()[0].lower()
-    ee_platform_version = platform.linux_distribution()[1]
+    #ee_platform_distro = platform.linux_distribution()[0].lower()
+    #ee_platform_version = platform.linux_distribution()[1]
+    ee_platform_distro = distro.id().lower()
+    ee_platform_version = distro.version()
     ee_platform_codename = os.popen("lsb_release -sc | tr -d \'\\n\'").read()
 
     # Get timezone of system
