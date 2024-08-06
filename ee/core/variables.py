@@ -119,8 +119,9 @@ class EEVariables():
         ee_nginx = ["nginx-custom", "nginx-wo"]
         ee_nginx_key = '188C9FB063F0247A'                         
     elif ee_platform_codename == 'bullseye':
-        ee_nginx_repo = ("deb http://provo-mirror.opensuse.org/repositories/home:"
-                         "/virtubox:/WordOps/Debian_11/ /")
+    #    ee_nginx_repo = ("deb http://provo-mirror.opensuse.org/repositories/home:"
+    #                     "/virtubox:/WordOps/Debian_11/ /")
+        ee_nginx_repo = ("deb [signed-by=/usr/share/keyrings/wordops-archive-keyring.gpg] https://download.opensuse.org/repositories/home:/virtubox:/WordOps/Debian_11/ /")                        
         ee_nginx = ["nginx-custom", "nginx-wo"]
         ee_nginx_key = '188C9FB063F0247A' 
 
