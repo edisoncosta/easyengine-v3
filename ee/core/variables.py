@@ -114,7 +114,7 @@ class EEVariables():
         ee_nginx = ["nginx-custom", "nginx-wo"]
         ee_nginx_key = '188C9FB063F0247A'              
     elif ee_platform_codename == 'buster':
-        ee_nginx_repo = ("deb http://provo-mirror.opensuse.org/repositories/home:"
+        ee_nginx_repo = ("deb http://download.opensuse.org/repositories/home:"
                          "/virtubox:/WordOps/Debian_10/ /")
         ee_nginx = ["nginx-custom", "nginx-wo"]
         ee_nginx_key = '188C9FB063F0247A'                         
