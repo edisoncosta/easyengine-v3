@@ -177,7 +177,9 @@ class EEStackController(CementBaseController):
             Log.info(self, "Adding repository for NGINX, please wait...")
             EERepo.add(self, repo_url=EEVariables.ee_nginx_repo)
             Log.debug(self, 'Adding key GPG of Nginx')
-           # EEShellExec.cmd_exec(self, "apt-key adv --keyserver keyserver.ubuntu.com --recv 188C9FB063F0247A")
+            if EEVariables.ee_platform_codename == 'buster':
+                EEShellExec.cmd_exec(self, "wget -O - -q https://download.opensuse.org/repositories/home:/virtubox:/WordOps/Debian_10/Release.key | apt-key add -")
+            # EEShellExec.cmd_exec(self, "apt-key adv --keyserver keyserver.ubuntu.com --recv 188C9FB063F0247A")
             # EEShellExec.cmd_exec(self, "curl -fsSL 'https://download.opensuse.org/repositories/home:virtubox:WordOps/Debian_11/Release.key' | gpg --dearmor | tee /usr/share/keyrings/wordops-archive-keyring.gpg >/dev/null 2>&1")
             # EERepo.add_key(self, EEVariables.ee_nginx_key)
 
